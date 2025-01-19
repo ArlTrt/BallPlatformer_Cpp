@@ -11,19 +11,20 @@
     <None Include="..\..\Source\BallPlatformer_CppEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
     </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BallPlatformer_Cpp">
@@ -36,6 +37,12 @@
       <Filter>Source\BallPlatformer_Cpp</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlatformer_Cpp.h">
+      <Filter>Source\BallPlatformer_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayer.h">
+      <Filter>Source\BallPlatformer_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayer.cpp">
       <Filter>Source\BallPlatformer_Cpp</Filter>
     </ClCompile>
   </ItemGroup>
