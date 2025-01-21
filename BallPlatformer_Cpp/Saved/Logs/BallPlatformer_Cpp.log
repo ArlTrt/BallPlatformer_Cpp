@@ -1368,3 +1368,122 @@ LogConfig: Set CVar [[r.VRS.ContrastAdaptiveShading:1]]
 [2025.01.21-09.33.01:293][ 42]LogFab: Display: User logged in
 [2025.01.21-09.33.01:293][ 42]LogFab: Display: User client id: xyza7891REBVsEqSJRRNXmlS7EQHM459
 [2025.01.21-09.33.01:441][ 51]LogEOSSDK: Warning: LogEOS: Error response received from backend. ServiceName=[Friend], OperationName=[GetBlockList], Url=[<Redacted>], HttpStatus=[403], ErrorCode=[errors.com.epicgames.common.insufficient_scopes], NumericErrorCode=[1056], ErrorMessage=[Insufficient access scopes. Expected: [friends_list]], CorrId=[EOS-YwCIiNUX2U2xnS1QaCqwfA-aQ0Zg0yRkkOCxpOw88kw_g]
+[2025.01.21-09.34.45:685][557]LogDerivedDataCache: C:/Users/aurel/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.000 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 0 files in 1 folders with total size 0 MiB.
+[2025.01.21-09.38.24:519][455]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 331.846222
+[2025.01.21-09.38.25:519][458]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-09.38.25:519][458]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 332.512299, Update Interval: 350.588104
+[2025.01.21-09.44.18:913][518]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 686.241150
+[2025.01.21-09.44.19:913][521]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-09.44.19:913][521]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 686.908752, Update Interval: 329.447906
+[2025.01.21-09.49.54:705][604]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 1022.033752
+[2025.01.21-09.49.55:705][607]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-09.49.55:705][607]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 1022.700134, Update Interval: 316.364624
+[2025.01.21-09.55.24:095][592]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 1351.424683
+[2025.01.21-09.55.25:096][595]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-09.55.25:096][595]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 1352.092896, Update Interval: 320.600006
+[2025.01.21-10.01.02:481][607]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 1689.810303
+[2025.01.21-10.01.03:480][610]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.01.03:480][610]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 1690.475952, Update Interval: 323.392426
+[2025.01.21-10.02.03:946][528]LogContentBrowser: Deferred new asset folder creation: NewFolder
+[2025.01.21-10.02.03:955][528]LogContentBrowser: Creating deferred item: NewFolder
+[2025.01.21-10.02.03:974][529]LogContentBrowser: Renaming the item being created (Deferred Item: NewFolder).
+[2025.01.21-10.02.08:616][800]LogContentBrowser: Attempting asset rename: NewFolder -> Inputs
+[2025.01.21-10.02.08:663][800]LogContentBrowser: End creating deferred item NewFolder
+[2025.01.21-10.02.21:672][548]LogContentBrowser: Deferred new asset file creation: NewInputAction
+[2025.01.21-10.02.21:679][548]LogContentBrowser: Creating deferred item: NewInputAction
+[2025.01.21-10.02.21:735][550]LogContentBrowser: Renaming the item being created (Deferred Item: NewInputAction).
+[2025.01.21-10.03.00:120][ 79]LogContentBrowser: Attempting asset rename: NewInputAction -> M
+[2025.01.21-10.03.00:129][ 79]LogContentBrowser: End creating deferred item NewInputAction
+[2025.01.21-10.03.08:424][544]LogContentBrowser: Attempting asset rename: M -> IA_Move
+[2025.01.21-10.03.08:641][544]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.01.21-10.03.08:645][544]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Inputs/IA_Move] ([1] browsable assets)...
+[2025.01.21-10.03.08:645][544]OBJ SavePackage: Finished generating thumbnails for package [/Game/Inputs/IA_Move]
+[2025.01.21-10.03.08:645][544]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Inputs/IA_Move" FILE="D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Content/Inputs/IA_Move.uasset" SILENT=true
+[2025.01.21-10.03.08:663][544]LogSavePackage: Moving output files for package: /Game/Inputs/IA_Move
+[2025.01.21-10.03.08:663][544]LogSavePackage: Moving 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/IA_MoveFE5DD2134F8390FD10045988E3C483A3.tmp' to 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Content/Inputs/IA_Move.uasset'
+[2025.01.21-10.03.08:669][544]LogFileHelpers: InternalPromptForCheckoutAndSave took 27.160 ms
+[2025.01.21-10.03.08:762][544]LogUObjectHash: Compacting FUObjectHashTables data took   1.02ms
+[2025.01.21-10.03.08:781][544]LogUObjectHash: Compacting FUObjectHashTables data took   1.18ms
+[2025.01.21-10.03.08:798][544]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2025.01.21-10.03.08:902][544]LogContentValidation: Display: Starting to validate 1 assets
+[2025.01.21-10.03.08:902][544]LogContentValidation: Enabled validators:
+[2025.01.21-10.03.08:902][544]LogContentValidation: 	/Script/DataValidation.EditorValidator_Material
+[2025.01.21-10.03.08:902][544]LogContentValidation: 	/Script/DataValidation.DirtyFilesChangelistValidator
+[2025.01.21-10.03.08:902][544]LogContentValidation: 	/Script/DataValidation.EditorValidator_Localization
+[2025.01.21-10.03.08:902][544]LogContentValidation: 	/Script/DataValidation.PackageFileValidator
+[2025.01.21-10.03.08:902][544]LogContentValidation: 	/Script/DataValidation.WorldPartitionChangelistValidator
+[2025.01.21-10.03.08:902][544]LogContentValidation: 	/Script/InputBlueprintNodes.EnhancedInputUserWidgetValidator
+[2025.01.21-10.03.08:905][544]AssetCheck: /Game/Inputs/IA_Move Validating asset
+[2025.01.21-10.03.09:906][598]LogAssetEditorSubsystem: Opening Asset editor for InputAction /Game/Inputs/IA_Move.IA_Move
+[2025.01.21-10.05.25:548][ 37]LogContentBrowser: Deferred new asset file creation: NewInputMappingContext
+[2025.01.21-10.05.25:561][ 37]LogContentBrowser: Creating deferred item: NewInputMappingContext
+[2025.01.21-10.05.25:580][ 38]LogContentBrowser: Renaming the item being created (Deferred Item: NewInputMappingContext).
+[2025.01.21-10.05.42:963][ 32]LogContentBrowser: Attempting asset rename: NewInputMappingContext -> IMC_BallPlayer
+[2025.01.21-10.05.42:965][ 32]LogContentBrowser: End creating deferred item NewInputMappingContext
+[2025.01.21-10.05.44:577][123]LogAssetEditorSubsystem: Opening Asset editor for InputMappingContext /Game/Inputs/IMC_BallPlayer.IMC_BallPlayer
+[2025.01.21-10.05.48:702][319]LogSlate: Took 0.000368 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2025.01.21-10.07.16:770][701]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 2064.096680
+[2025.01.21-10.07.17:771][704]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.07.17:772][704]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 2064.763672, Update Interval: 331.802734
+[2025.01.21-10.13.23:845][190]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 2431.169434
+[2025.01.21-10.13.24:030][197]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.13.24:030][197]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 2431.323486, Update Interval: 327.519775
+[2025.01.21-10.14.00:724][313]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2025.01.21-10.14.00:727][313]LogFileHelpers: Editor autosave (incl. external actors) for '/Temp/Untitled_1' took 0.062
+[2025.01.21-10.14.00:818][313]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Inputs/IA_Move] ([1] browsable assets)...
+[2025.01.21-10.14.00:819][313]OBJ SavePackage: Finished generating thumbnails for package [/Game/Inputs/IA_Move]
+[2025.01.21-10.14.00:831][313]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Inputs/IA_Move_Auto1
+[2025.01.21-10.14.00:831][313]LogSavePackage: Moving 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/IA_Move_Auto1D1CAC9954ECCEC22364790B2ACF511C6.tmp' to 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/Autosaves/Game/Inputs/IA_Move_Auto1.uasset'
+[2025.01.21-10.14.00:834][313]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Inputs/IMC_BallPlayer] ([1] browsable assets)...
+[2025.01.21-10.14.00:834][313]OBJ SavePackage: Finished generating thumbnails for package [/Game/Inputs/IMC_BallPlayer]
+[2025.01.21-10.14.00:847][313]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Inputs/IMC_BallPlayer_Auto1
+[2025.01.21-10.14.00:848][313]LogSavePackage: Moving 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/IMC_BallPlayer_Auto1FB567B8E4AC65B55BE15E68AAB6C5330.tmp' to 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/Autosaves/Game/Inputs/IMC_BallPlayer_Auto1.uasset'
+[2025.01.21-10.14.00:850][313]LogFileHelpers: Auto-saving content packages took 0.123
+[2025.01.21-10.16.21:107][804]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.01.21-10.16.21:186][804]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Inputs/IMC_BallPlayer] ([1] browsable assets)...
+[2025.01.21-10.16.21:186][804]OBJ SavePackage: Finished generating thumbnails for package [/Game/Inputs/IMC_BallPlayer]
+[2025.01.21-10.16.21:186][804]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Inputs/IMC_BallPlayer" FILE="D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Content/Inputs/IMC_BallPlayer.uasset" SILENT=true
+[2025.01.21-10.16.21:202][804]LogSavePackage: Moving output files for package: /Game/Inputs/IMC_BallPlayer
+[2025.01.21-10.16.21:202][804]LogSavePackage: Moving 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/IMC_BallPlayer1818D1D348EA27EA601EB4A3F7F15880.tmp' to 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Content/Inputs/IMC_BallPlayer.uasset'
+[2025.01.21-10.16.21:217][804]LogFileHelpers: InternalPromptForCheckoutAndSave took 109.500 ms (total: 136.660 ms)
+[2025.01.21-10.16.21:302][804]LogContentValidation: Display: Starting to validate 1 assets
+[2025.01.21-10.16.21:302][804]LogContentValidation: Enabled validators:
+[2025.01.21-10.16.21:302][804]LogContentValidation: 	/Script/DataValidation.EditorValidator_Material
+[2025.01.21-10.16.21:302][804]LogContentValidation: 	/Script/DataValidation.DirtyFilesChangelistValidator
+[2025.01.21-10.16.21:302][804]LogContentValidation: 	/Script/DataValidation.EditorValidator_Localization
+[2025.01.21-10.16.21:302][804]LogContentValidation: 	/Script/DataValidation.PackageFileValidator
+[2025.01.21-10.16.21:302][804]LogContentValidation: 	/Script/DataValidation.WorldPartitionChangelistValidator
+[2025.01.21-10.16.21:302][804]LogContentValidation: 	/Script/InputBlueprintNodes.EnhancedInputUserWidgetValidator
+[2025.01.21-10.16.21:303][804]AssetCheck: /Game/Inputs/IMC_BallPlayer Validating asset
+[2025.01.21-10.16.22:712][882]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.01.21-10.16.22:793][882]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Inputs/IA_Move] ([1] browsable assets)...
+[2025.01.21-10.16.22:793][882]OBJ SavePackage: Finished generating thumbnails for package [/Game/Inputs/IA_Move]
+[2025.01.21-10.16.22:793][882]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Inputs/IA_Move" FILE="D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Content/Inputs/IA_Move.uasset" SILENT=true
+[2025.01.21-10.16.22:809][882]LogSavePackage: Moving output files for package: /Game/Inputs/IA_Move
+[2025.01.21-10.16.22:811][882]LogSavePackage: Moving 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Saved/IA_Move4973E3E44E7A35174AC4DC9974071C01.tmp' to 'D:/Aurelien/ICAN/Year_1/Cpp_Nelson/BallPlatformer_Cpp/BallPlatformer_Cpp/Content/Inputs/IA_Move.uasset'
+[2025.01.21-10.16.22:826][882]LogFileHelpers: InternalPromptForCheckoutAndSave took 113.742 ms (total: 250.403 ms)
+[2025.01.21-10.16.22:904][882]LogContentValidation: Display: Starting to validate 1 assets
+[2025.01.21-10.16.22:904][882]LogContentValidation: Enabled validators:
+[2025.01.21-10.16.22:904][882]LogContentValidation: 	/Script/DataValidation.EditorValidator_Material
+[2025.01.21-10.16.22:904][882]LogContentValidation: 	/Script/DataValidation.DirtyFilesChangelistValidator
+[2025.01.21-10.16.22:904][882]LogContentValidation: 	/Script/DataValidation.EditorValidator_Localization
+[2025.01.21-10.16.22:904][882]LogContentValidation: 	/Script/DataValidation.PackageFileValidator
+[2025.01.21-10.16.22:904][882]LogContentValidation: 	/Script/DataValidation.WorldPartitionChangelistValidator
+[2025.01.21-10.16.22:904][882]LogContentValidation: 	/Script/InputBlueprintNodes.EnhancedInputUserWidgetValidator
+[2025.01.21-10.16.22:904][882]AssetCheck: /Game/Inputs/IA_Move Validating asset
+[2025.01.21-10.19.33:371][256]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 2800.697998
+[2025.01.21-10.19.34:371][259]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.19.34:371][259]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 2801.364746, Update Interval: 324.102905
+[2025.01.21-10.25.32:632][333]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 3159.957031
+[2025.01.21-10.25.33:631][336]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.25.33:631][336]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 3160.623535, Update Interval: 323.921631
+[2025.01.21-10.31.54:713][479]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 3542.037842
+[2025.01.21-10.31.55:712][482]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.31.55:712][482]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 3542.704102, Update Interval: 305.952942
+[2025.01.21-10.34.45:685][992]LogDerivedDataCache: C:/Users/aurel/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.000 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 0 files in 1 folders with total size 0 MiB.
+[2025.01.21-10.37.58:264][569]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 3905.589844
+[2025.01.21-10.37.59:263][572]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.37.59:263][572]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 3906.255615, Update Interval: 315.355682
+[2025.01.21-10.43.52:689][632]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 4260.022949
+[2025.01.21-10.43.53:696][635]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.01.21-10.43.53:696][635]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 4260.688965, Update Interval: 302.450012

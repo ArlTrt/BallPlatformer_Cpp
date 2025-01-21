@@ -39,10 +39,22 @@
     <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlatformer_Cpp.h">
       <Filter>Source\BallPlatformer_Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayer.cpp">
+      <Filter>Source\BallPlatformer_Cpp</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayer.h">
       <Filter>Source\BallPlatformer_Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayer.cpp">
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayerController.h">
+      <Filter>Source\BallPlatformer_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\BallPlayerController.cpp">
+      <Filter>Source\BallPlatformer_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\PlatformerGameMode.h">
+      <Filter>Source\BallPlatformer_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BallPlatformer_Cpp\PlatformerGameMode.cpp">
       <Filter>Source\BallPlatformer_Cpp</Filter>
     </ClCompile>
   </ItemGroup>

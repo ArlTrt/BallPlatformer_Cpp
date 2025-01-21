@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BallPlatformer_CppModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dacf7dc5f037823e7566da608fc29c10e6e863e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb1c531b31747e9f7e953d72a6a5a9ea1c70027f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BallPlatformer_CppModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BallPlatformer_CppModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\aurelien\\ican\\year_1\\cpp_nelson\\ballplatformer_cpp\\ballplatformer_cpp\\intermediate\\build\\win64\\unrealeditor\\inc\\ballplatformer_cpp\\uht\\ballplayer.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\aurelien\\ican\\year_1\\cpp_nelson\\ballplatformer_cpp\\ballplatformer_cpp\\intermediate\\build\\win64\\x64\\ballplatformer_cppeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\aurelien\\ican\\year_1\\cpp_nelson\\ballplatformer_cpp\\ballplatformer_cpp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ballplatformer_cpp\\definitions.ballplatformer_cpp.h",
+            "d:\\aurelien\\ican\\year_1\\cpp_nelson\\ballplatformer_cpp\\ballplatformer_cpp\\source\\ballplatformer_cpp\\ballplayer.h",
+            "d:\\aurelien\\ican\\year_1\\cpp_nelson\\ballplatformer_cpp\\ballplatformer_cpp\\intermediate\\build\\win64\\unrealeditor\\inc\\ballplatformer_cpp\\uht\\ballplayer.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
