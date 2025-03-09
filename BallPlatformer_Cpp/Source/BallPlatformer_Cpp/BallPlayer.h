@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "InputAction.h"
 #include "BallPlayer.generated.h"
 
 UCLASS()
@@ -21,6 +22,14 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* BallMesh;
+
+	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
+	class UInputMappingContext* InputMapping;
+
+	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
+	class UInputAction* MoveAction;
+
+	void MoveInput();
 
 public:	
 	// Called every frame
