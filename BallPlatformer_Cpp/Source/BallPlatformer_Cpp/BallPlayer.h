@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "InputAction.h"
+#include "InputActionValue.h"
+#include "Camera/CameraComponent.h"
 #include "BallPlayer.generated.h"
 
 UCLASS()
@@ -23,13 +25,31 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* BallMesh;
 
+	UPROPERTY(EditAnywhere)
+	UCameraComponent* PlayerCamera;
+
 	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
 	class UInputMappingContext* InputMapping;
 
 	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
 	class UInputAction* MoveAction;
 
-	void MoveInput();
+	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
+	class UInputAction* JumpAction;
+
+	void MoveInput(const FInputActionValue& Value);
+	void Jump();
+	void ResetJump();
+
+	void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
+
+	// Jump Logic
+	UPROPERTY(EditAnywhere, Category = "Jump")
+	float JumpImpulse = 1000.0f;
+
+	int JumpCount = 0;
+	bool bIsGrounded = false;
+
 
 public:	
 	// Called every frame
