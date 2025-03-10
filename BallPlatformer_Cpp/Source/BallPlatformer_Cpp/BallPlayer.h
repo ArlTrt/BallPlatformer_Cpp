@@ -45,7 +45,7 @@ protected:
 
 	// Jump Logic
 	UPROPERTY(EditAnywhere, Category = "Jump")
-	float JumpImpulse = 1000.0f;
+	float JumpImpulse = 800.0f;
 
 	int JumpCount = 0;
 	bool bIsGrounded = false;
