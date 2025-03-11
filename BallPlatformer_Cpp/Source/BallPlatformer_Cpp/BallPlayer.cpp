@@ -115,9 +115,9 @@ void ABallPlayer::ResetJump()
 	bIsGrounded = true;
 }
 
-void ABallPlayer::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+void ABallPlayer::NotifyHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, "notifyhit");
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, "notifyhit");
 	if (HitNormal.Z > 0.7f)
 	{
 		ResetJump();

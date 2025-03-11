@@ -19,11 +19,19 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	//UFUNCTION()
-	//void OnHit(UPrimitiveComponent )
+	void NotifyHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+private:
+	UPROPERTY(VisibleAnywhere, Category = "Component")
+	UStaticMeshComponent* BumperMesh;
+
+	UPROPERTY(EditAnywhere, Category = "Bounce")
+	float BounceStrength = 1000.0f;
+
+	TSet<AActor*> BouncedActors;
 
 };
