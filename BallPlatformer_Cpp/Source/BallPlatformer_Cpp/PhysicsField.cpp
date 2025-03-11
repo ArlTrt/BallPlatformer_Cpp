@@ -57,3 +57,13 @@ void APhysicsField::CreatePhysicsField()
 	//FieldSystem->ApplyPhysicsField(true, EFieldPhysicsType::Field_LinearForce, nullptr, Culling);
 	FieldSystem->AddPersistentField(true, EFieldPhysicsType::Field_LinearForce, nullptr, Culling);
 }
+
+void APhysicsField::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, "Physics field begin overlap ");
+}
+
+void APhysicsField::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, "Physics field end overlap ");
+}
