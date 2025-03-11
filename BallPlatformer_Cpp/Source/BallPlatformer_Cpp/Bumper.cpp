@@ -27,7 +27,7 @@ void ABumper::BeginPlay()
 
 void ABumper::NotifyHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "NotifyHit detected");
+	//GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "NotifyHit detected");
 
 	if (OtherActor && OtherActor != this)
 	{
@@ -35,7 +35,7 @@ void ABumper::NotifyHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 		if (OtherComponent && OtherComponent->IsSimulatingPhysics())
 		{
 			FString ActorName = OtherActor->GetName();
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Overlap with: %s"), *ActorName));
+			//GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Overlap with: %s"), *ActorName));
 
 			FVector BounceDirection = (HitLocation - GetActorLocation()).GetSafeNormal();
 			OtherComponent->AddImpulse(BounceDirection * BounceStrength, NAME_None, true);

@@ -18,7 +18,7 @@ void APhysicsField::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//CreatePhysicsField(GetActorLocation(), 500.f);
+	CreatePhysicsField(GetActorLocation());
 }
 
 // Called every frame
@@ -28,15 +28,23 @@ void APhysicsField::Tick(float DeltaTime)
 
 }
 
-//void APhysicsField::CreatePhysicsField(FVector Location, float Radius)
-//{
-//	if (!PhysicsField) return;
+void APhysicsField::CreatePhysicsField(FVector Location)
+{
+	if (!PhysicsField) return;
 
-//	URadialVector* ZeroGravity = NewObject<URadialVector>();
-//	ZeroGravity->Magnitude = 1000.f;
-//	ZeroGravity->Position = Location;
-	//ZeroGravity->Radius = Radius;
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, "Physics field ");
 
-//	PhysicsField->ApplyPhysicsField(true, EFieldPhysicsType::Field_LinearForce, nullptr, ZeroGravity);
-//}
+	FTransform BoxTransform = FTransform(FQuat::Identity, Location);
 
+	UBoxFalloff* GravityZone = NewObject<UBoxFalloff>();
+	GravityZone->SetBoxFalloff(100.f, 0.f, 100.f, 0.f, BoxTransform, EFieldFalloffType::Field_Falloff_Linear);
+
+	UUniformVector* ZeroGravity = NewObject<UUniformVector>();
+	ZeroGravity->Magnitude = 100.f;
+	ZeroGravity->Direction = FVector(0.f, 0.f, 1.f);
+
+	UCullingField* Culling = NewObject<UCullingField>();
+	Culling->SetCullingField(ZeroGravity, GravityZone, EFieldCullingOperationType::Field_Culling_Outside);
+
+	PhysicsField->ApplyPhysicsField(true, EFieldPhysicsType::Field_LinearForce, nullptr, Culling);
+}

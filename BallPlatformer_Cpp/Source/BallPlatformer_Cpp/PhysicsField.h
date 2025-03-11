@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Field/FieldSystemComponent.h"
-#include "Field/FieldSystemObjects.h"
+//#include "Field/FieldSystemObjects.h"
 #include "PhysicsField.generated.h"
 
 UCLASS()
@@ -28,5 +28,5 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Physics Field")
 	UFieldSystemComponent* PhysicsField;
 
-	//void CreatePhysicsField(FVector Location, float Radius);
+	void CreatePhysicsField(FVector Location);
 };
