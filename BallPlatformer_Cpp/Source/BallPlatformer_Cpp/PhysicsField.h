@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Field/FieldSystemComponent.h"
-//#include "Field/FieldSystemObjects.h"
 #include "PhysicsField.generated.h"
 
 UCLASS()
@@ -25,8 +24,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Physics Field")
-	UFieldSystemComponent* PhysicsField;
+	UPROPERTY(VisibleAnywhere, Category = "Component")
+	UStaticMeshComponent* FieldMesh;
 
-	void CreatePhysicsField(FVector Location);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Component")
+	UFieldSystemComponent* FieldSystem;
+
+	void CreatePhysicsField();
 };
