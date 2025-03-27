@@ -6,7 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Connector.generated.h"
 
-UCLASS()
+class ABeam;
+
+UCLASS(Blueprintable)
 class BALLPLATFORMER_CPP_API AConnector : public AActor
 {
 	GENERATED_BODY()
@@ -14,6 +16,12 @@ class BALLPLATFORMER_CPP_API AConnector : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AConnector();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Beams")
+	TArray<ABeam*> ConnectedBeams;
+
+	UPROPERTY(VisibleAnywhere, Category = "Mesh")
+	UStaticMeshComponent* ConnectorMesh;
 
 protected:
 	// Called when the game starts or when spawned

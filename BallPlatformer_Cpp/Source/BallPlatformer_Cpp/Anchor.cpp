@@ -3,3 +3,11 @@
 
 #include "Anchor.h"
 
+AAnchor::AAnchor()
+{
+
+    ConnectorMesh->SetSimulatePhysics(false);
+    ConnectorMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    ConnectorMesh->SetGenerateOverlapEvents(false);
+
+}

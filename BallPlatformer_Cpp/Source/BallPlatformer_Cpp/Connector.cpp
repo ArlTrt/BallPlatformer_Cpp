@@ -2,12 +2,19 @@
 
 
 #include "Connector.h"
+#include "Beam.h"
 
 // Sets default values
 AConnector::AConnector()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	ConnectorMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ConnectorMesh"));
+	SetRootComponent(ConnectorMesh);
+
+	ConnectorMesh->SetSimulatePhysics(true);
+	ConnectorMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
 }
 

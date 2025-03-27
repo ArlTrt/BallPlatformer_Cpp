@@ -6,12 +6,15 @@
 #include "Connector.h"
 #include "Anchor.generated.h"
 
-/**
- * 
- */
-UCLASS()
+
+UCLASS(Blueprintable)
 class BALLPLATFORMER_CPP_API AAnchor : public AConnector
 {
 	GENERATED_BODY()
 	
+public:
+    AAnchor();
+
+    UFUNCTION(BlueprintCallable, Category = "Anchor")
+    bool IsLocked() const { return true; }
 };
