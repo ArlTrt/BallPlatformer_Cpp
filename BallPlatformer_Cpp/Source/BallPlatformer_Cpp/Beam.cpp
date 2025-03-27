@@ -14,12 +14,8 @@ ABeam::ABeam()
 	BeamMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BeamMesh"));
 	SetRootComponent(BeamMesh);
 
-    BeamMesh->SetSimulatePhysics(true);
-    BeamMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-
-    BeamMesh->BodyInstance.bOverrideMass = true;
-    BeamMesh->BodyInstance.SetMassOverride(BeamMass);
-
+    BeamMesh->SetSimulatePhysics(false);
+    BeamMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
 // Called when the game starts or when spawned
@@ -28,8 +24,13 @@ void ABeam::BeginPlay()
 	Super::BeginPlay();
 
     DebugConnectors();
-    RestingPosition = GetActorLocation();
-	
+    if (Connector1 && Connector2)
+    {
+        RestLength = FVector::Distance(
+            Connector1->GetActorLocation(),
+            Connector2->GetActorLocation()
+        );
+    }
 }
 
 // Called every frame
@@ -39,8 +40,44 @@ void ABeam::Tick(float DeltaTime)
 
     if (Connector1 && Connector2)
     {
-        ApplySpringForces();
+        const FVector Conn1Pos = Connector1->GetActorLocation();
+        const FVector Conn2Pos = Connector2->GetActorLocation();
+
+        ApplySpringForces(Conn1Pos, Conn2Pos);
+
+        UpdateBeamTransform(Conn1Pos, Conn2Pos);
     } 
+}
+
+void ABeam::ApplySpringForces(const FVector Conn1Pos, const FVector Conn2Pos)
+{
+    if (!Connector1 || !Connector2) return;
+
+    // Hooke law (F = -k * (x - L))
+    const float CurrentLength = FVector::Distance(Conn1Pos, Conn2Pos);
+    const FVector ForceDir = (Conn2Pos - Conn1Pos).GetSafeNormal();
+    const FVector SpringForce = SpringStiffness * (CurrentLength - RestLength) * ForceDir;
+
+    // Apply force & damping to connectors (not anchors)
+    if (!Connector1->IsA(AAnchor::StaticClass()))
+    {
+        Connector1->ConnectorMesh->AddForce(SpringForce);
+        Connector1->ConnectorMesh->AddForce(-Connector1->ConnectorMesh->GetPhysicsLinearVelocity() * DampingFactor);
+    }
+
+    if (!Connector2->IsA(AAnchor::StaticClass()))
+    {
+        Connector2->ConnectorMesh->AddForce(-SpringForce);
+        Connector2->ConnectorMesh->AddForce(-Connector2->ConnectorMesh->GetPhysicsLinearVelocity() * DampingFactor);
+    }
+}
+
+void ABeam::UpdateBeamTransform(const FVector& Conn1Pos, const FVector& Conn2Pos)
+{
+    SetActorLocation((Conn1Pos + Conn2Pos) * 0.5f);
+
+    const FRotator NewRotation = (Conn2Pos - Conn1Pos).Rotation();
+    SetActorRotation(NewRotation);
 }
 
 void ABeam::DebugConnectors() const
@@ -67,67 +104,4 @@ void ABeam::DebugConnectors() const
             GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Connector 2 not assigned!"));
         }
     }
-}
-
-void ABeam::ApplySpringForces()
-{
-    if (!Connector1 || !Connector2) return;
-
-    FVector Conn1Pos = Connector1->GetActorLocation();
-    FVector Conn2Pos = Connector2->GetActorLocation();
-    FVector BeamPos = GetActorLocation();
-
-    float RestLength = FVector::Distance(Conn1Pos, Conn2Pos);
-
-    // compute directions
-    FVector BeamToConn1 = (Conn1Pos - BeamPos);
-    FVector BeamToConn2 = (Conn2Pos - BeamPos);
-    float DistToConn1 = BeamToConn1.Size();
-    float DistToConn2 = BeamToConn2.Size();
-    FVector DirToConn1 = BeamToConn1.GetSafeNormal();
-    FVector DirToConn2 = BeamToConn2.GetSafeNormal();
-
-    // Hooke law (F = -k * (x - L))
-    FVector ForceOnBeamFrom1 = SpringStiffness * (DistToConn1 - (RestLength / 2)) * DirToConn1;
-    FVector ForceOnBeamFrom2 = SpringStiffness * (DistToConn2 - (RestLength / 2)) * DirToConn2;
-
-    // apply virtual anchor force
-    FVector AnchorReactionForce = FVector::ZeroVector;
-
-    if (Connector1->IsA(AAnchor::StaticClass()))
-    {
-        AnchorReactionForce += -ForceOnBeamFrom1; // anchor1
-    }
-    else
-    {
-        Connector1->ConnectorMesh->AddForce(-ForceOnBeamFrom1);
-    }
-
-    if (Connector2->IsA(AAnchor::StaticClass()))
-    {
-        AnchorReactionForce += -ForceOnBeamFrom2; // anchor2
-    }
-    else
-    {
-        Connector2->ConnectorMesh->AddForce(-ForceOnBeamFrom2);
-    }
-
-    // apply force
-    FVector TotalBeamForce = ForceOnBeamFrom1 + ForceOnBeamFrom2 + AnchorReactionForce;
-    BeamMesh->AddForce(TotalBeamForce);
-
-    // add damping
-    FVector BeamVelocity = BeamMesh->GetPhysicsLinearVelocity();
-    FVector LocalDamping = -BeamVelocity * DampingFactor;
-
-    if (FMath::Abs(DistToConn1 - (RestLength / 2)) < 10.0f)
-    {
-        LocalDamping *= 2.0f;
-    }
-
-    BeamMesh->AddForce(LocalDamping);
-
-    // debug
-    DrawDebugLine(GetWorld(), BeamPos, BeamPos + TotalBeamForce * 0.01f, FColor::Green, false, -1, 0, 1.0f);
-    DrawDebugLine(GetWorld(), BeamPos, BeamPos + LocalDamping * 0.01f, FColor::Blue, false, -1, 0, 1.0f);
 }

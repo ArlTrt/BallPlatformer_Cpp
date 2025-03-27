@@ -16,6 +16,8 @@ AConnector::AConnector()
 	ConnectorMesh->SetSimulatePhysics(true);
 	ConnectorMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
+	ConnectorMesh->BodyInstance.bOverrideMass = true;
+	ConnectorMesh->BodyInstance.SetMassOverride(1000.0f);
 }
 
 // Called when the game starts or when spawned

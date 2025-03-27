@@ -24,16 +24,13 @@ public:
 	class AConnector* Connector2;
 
 	UPROPERTY(EditAnywhere, Category = "Physics")
-	float SpringStiffness = 100000.0f;
+	float SpringStiffness = 500000.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Physics")
-	float DampingFactor = 500.0f;
-
-	UPROPERTY(EditAnywhere, Category = "Physics")
-	float BeamMass = 100.0f;
+	float DampingFactor = 2000.0f;
 
 	UPROPERTY(VisibleAnywhere, Category = "Physics")
-	FVector RestingPosition;
+	float RestLength;
 
 protected:
 	// Called when the game starts or when spawned
@@ -43,7 +40,10 @@ protected:
 	UStaticMeshComponent* BeamMesh;
 
 	UFUNCTION(BlueprintCallable, Category = "Physics")
-	void ApplySpringForces();
+	void ApplySpringForces(const FVector Conn1Pos, const FVector Conn2Pos);
+
+	UFUNCTION(BlueprintCallable, Category = "Physics")
+	void UpdateBeamTransform(const FVector& Conn1Pos, const FVector& Conn2Pos);
 
 	UFUNCTION(BlueprintCallable, Category = "Debug")
 	void DebugConnectors() const;
@@ -52,4 +52,5 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	
 };
