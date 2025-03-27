@@ -15,7 +15,7 @@ ABeam::ABeam()
 	SetRootComponent(BeamMesh);
 
     BeamMesh->SetSimulatePhysics(false);
-    BeamMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    BeamMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 }
 
 // Called when the game starts or when spawned
