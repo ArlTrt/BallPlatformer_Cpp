@@ -24,13 +24,28 @@ public:
 	class AConnector* Connector2;
 
 	UPROPERTY(EditAnywhere, Category = "Physics")
-	float SpringStiffness = 500000.0f;
+	float SpringStiffness = 1000.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Physics")
-	float DampingFactor = 2000.0f;
+	float DampingFactor = 50.0f;
 
 	UPROPERTY(VisibleAnywhere, Category = "Physics")
 	float RestLength;
+
+	UPROPERTY(EditAnywhere, Category = "Physics")
+	float MaxForceThreshold = 10000.0f;
+
+	UPROPERTY(VisibleAnywhere, Category = "Physics")
+	float CurrentForce = 0.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Materials")
+	class UMaterialInstanceDynamic* BeamMaterial;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Materials")
+	FLinearColor MinColor = FLinearColor::Green;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Materials")
+	FLinearColor MaxColor = FLinearColor::Red;
 
 protected:
 	// Called when the game starts or when spawned
@@ -44,6 +59,9 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Physics")
 	void UpdateBeamTransform(const FVector& Conn1Pos, const FVector& Conn2Pos);
+
+	UFUNCTION(BlueprintCallable, Category = "Visual")
+	void UpdateBeamColor();
 
 	UFUNCTION(BlueprintCallable, Category = "Debug")
 	void DebugConnectors() const;

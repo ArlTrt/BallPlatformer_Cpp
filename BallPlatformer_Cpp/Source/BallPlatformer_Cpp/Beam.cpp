@@ -23,6 +23,12 @@ void ABeam::BeginPlay()
 {
 	Super::BeginPlay();
 
+    BeamMaterial = BeamMesh->CreateAndSetMaterialInstanceDynamic(0);
+    if (BeamMaterial)
+    {
+        BeamMaterial->SetVectorParameterValue("BeamColor", FLinearColor::Green);
+    }
+
     DebugConnectors();
     if (Connector1 && Connector2)
     {
@@ -53,10 +59,22 @@ void ABeam::ApplySpringForces(const FVector Conn1Pos, const FVector Conn2Pos)
 {
     if (!Connector1 || !Connector2) return;
 
-    // Hooke law (F = -k * (x - L))
     const float CurrentLength = FVector::Distance(Conn1Pos, Conn2Pos);
+
+    // Hooke law (F = -k * (x - L))
     const FVector ForceDir = (Conn2Pos - Conn1Pos).GetSafeNormal();
     const FVector SpringForce = SpringStiffness * (CurrentLength - RestLength) * ForceDir;
+
+    CurrentForce = SpringForce.Size() / 1000.0f;
+    // Update color
+    UpdateBeamColor();
+
+    // Break beam
+    if (CurrentForce > MaxForceThreshold)
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, "BEAM BROKEN!");
+        SetLifeSpan(0.1f);
+    }
 
     // Apply force & damping to connectors (not anchors)
     if (!Connector1->IsA(AAnchor::StaticClass()))
@@ -78,6 +96,18 @@ void ABeam::UpdateBeamTransform(const FVector& Conn1Pos, const FVector& Conn2Pos
 
     const FRotator NewRotation = (Conn2Pos - Conn1Pos).Rotation();
     SetActorRotation(NewRotation);
+}
+
+void ABeam::UpdateBeamColor()
+{
+    if (!BeamMaterial) return;
+
+    float ForceRatio = FMath::Clamp(CurrentForce / MaxForceThreshold, 0.0f, 1.0f);
+
+    FLinearColor NewColor = FMath::Lerp(MinColor, MaxColor, ForceRatio);
+
+    // Apply color
+    BeamMaterial->SetVectorParameterValue("BeamColor", NewColor);
 }
 
 void ABeam::DebugConnectors() const
