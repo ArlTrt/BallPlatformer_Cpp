@@ -72,8 +72,9 @@ void ABeam::ApplySpringForces(const FVector Conn1Pos, const FVector Conn2Pos)
     // Break beam
     if (CurrentForce > MaxForceThreshold)
     {
-        GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, "BEAM BROKEN!");
-        SetLifeSpan(0.1f);
+        //GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, "BEAM BROKEN!");
+        Destroy();
+        //SetLifeSpan(0.1f);
     }
 
     // Apply force & damping to connectors (not anchors)
